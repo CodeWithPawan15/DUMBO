@@ -5,24 +5,23 @@ const heartLoader = document.querySelector(".cssload-main");
 const yesBtn = document.querySelector(".js-yes-btn");
 const noBtn = document.querySelector(".js-no-btn");
 
-// /change the postion of no button
+// move NO button
 noBtn.addEventListener("mouseover", () => {
   const newX = Math.floor(Math.random() * questionContainer.offsetWidth);
   const newY = Math.floor(Math.random() * questionContainer.offsetWidth);
 
-  noBtn.style.left = `${newX}px`;
-  noBtn.style.top = `${newY}px`;
+  noBtn.style.left = ${newX}px;
+  noBtn.style.top = ${newY}px;
 });
 
-// yes button functionality
-
+// YES button
 yesBtn.addEventListener("click", () => {
   questionContainer.style.display = "none";
   heartLoader.style.display = "inherit";
 
-  const timeoutId = setTimeout(() => {
+  setTimeout(() => {
     heartLoader.style.display = "none";
-    resultContainer.style.display = "inherit";
-    gifResult.play();
+    resultContainer.style.display = "block";
+    // ❌ gifResult.play();  <-- removed
   }, 3000);
 });
